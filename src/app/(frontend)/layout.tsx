@@ -16,6 +16,8 @@ const playfair = Playfair_Display({
   variable: '--font-playfair',
 })
 
+export const dynamic = 'force-dynamic'
+
 export default function FrontendLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable}`}>
