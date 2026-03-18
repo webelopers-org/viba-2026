@@ -3,6 +3,9 @@ import { withPayload } from '@payloadcms/next/withPayload'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
+  outputFileTracingIncludes: {
+    '/*': ['./src/collections/**/*', './src/globals/**/*'],
+  },
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
       '.cjs': ['.cts', '.cjs'],
@@ -10,11 +13,6 @@ const nextConfig = {
       '.mjs': ['.mts', '.mjs'],
     }
     return webpackConfig
-  },
-  experimental: {
-    outputFileTracingIncludes: {
-      '/*': ['./src/collections/**/*', './src/globals/**/*'],
-    },
   },
 }
 
